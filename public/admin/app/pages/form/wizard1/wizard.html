@@ -1,0 +1,70 @@
+
+<div class="widgets">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div ba-panel ba-panel-title="Make new transaction" ba-panel-class="with-scroll">
+                <ba-wizard>
+                    <ba-wizard-step title="Command Type"  form="vm.addressForm">
+                        <form name="vm.addressForm" novalidate>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="productName" style="color: white;">Choose a commande</label>
+                                        <select class="" ng-change="change2(commandType)" ng-model="commandType" ng-options="item for item in itemsType">
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </ba-wizard-step>
+                    <ba-wizard-step title="Receiver" form="vm.personalInfoForm">
+                        <form name="vm.personalInfoForm" novalidate>
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="productName" style="color: white;">choose a receiver</label>
+                                                <select class="" ng-change="change1(selectedReceiver)" ng-model="selectedReceiver" ng-options="item.label as item.label for item in items">
+
+                                                </select>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </ba-wizard-step>
+                    <ba-wizard-step title="Amount" form="vm.productInfoForm">
+                        <form name="vm.productInfoForm" novalidate>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group has-feedback"
+                                         ng-class="{'has-error': vm.productInfoForm.productName.$invalid && (vm.productInfoForm.productName.$dirty || vm.productInfoForm.$submitted)}">
+                                        <label for="productName" style="color: white;">Fill below an amount</label>
+                                        <input type="text" class="form-control" id="productName" name="amount" placeholder="Product name" ng-change="change3(amount)" ng-model="amount" required>
+                                        <span class="help-block error-block basic-block">Required</span>
+                                    </div>
+                                    <div class="form-group"  ng-show="show">
+                                        <label for="productName" style="color: white;">Choose a currency</label>
+                                        <select class="" ng-change="change4(currency)" ng-model="currency" ng-options="item for item in itemsCurrency" >
+
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </form>
+                    </ba-wizard-step>
+                    <ba-wizard-step title="Finish">
+                        <form class="form-horizontal" name="vm.finishForm" novalidate>
+
+                            <label for="productName" style="color: white;">{{result}} ! </label>
+                        </form>
+                    </ba-wizard-step>
+                </ba-wizard>
+            </div>
+        </div>
+    </div>
+
+</div>
