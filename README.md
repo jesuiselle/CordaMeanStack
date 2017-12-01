@@ -1,4 +1,8 @@
-# CordaMeanStack
+# CordaMeanStack _ Project entitled 'Cross border payment using corda'
+
+Agile methodology scrum
+
+Project composed of 4 members.
 
 _________________________________________________________________
 
